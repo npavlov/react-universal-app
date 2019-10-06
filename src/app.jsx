@@ -1,14 +1,19 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router";
-import Home from "./pages/homePageComponents";
+import Home from "./pages/homePageComponent";
+import Second from "./pages/secondPageComponent";
+import Nav from "./components/nav";
 
 const App = () => {
   return (
-    <Switch>
-      <Route path='/home' component={Home} />
-      <Route path='/home' component={Home} />
-      <Route path='/' exact render={() => <Redirect to='/home' />} />
-    </Switch>
+    <>
+      <Nav />
+      <Switch>
+        <Route path='/home' component={Home} />
+        <Route path='/second' component={Second} />
+        <Route path='/' exact render={() => <Redirect to='/home' />} />
+      </Switch>
+    </>
   );
 };
 
